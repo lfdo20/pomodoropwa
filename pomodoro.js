@@ -13,7 +13,7 @@ $('document').ready(function(){
 
   // register sw script in supporting browsers
   if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('sw.js', { scope: '/' }).then(() => {
+    navigator.serviceWorker.register('sw.js').then(() => {
       console.log('Service Worker registered successfully.');
     }).catch(error => {
       console.log('Service Worker registration failed:', error);

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Pomodoro Clocker</title>
+    <meta charset="utf-8">
+    <!-- PWA Setup until next comment -->
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#0d233e">
+    <script src="notification.js"></script>
+    <!--<link rel="manifest" href="manifest.json">-->
+    <meta name="viewport" content="initial-scale=1, maximum-scale=0.7">
+    <!--<meta name="viewport" content="width=device-width,initial-scale=0.6">-->
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+    <link type="text/css" rel="stylesheet" href="pomodoro.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script src="easytimer.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
+    <script src="pomodoro.js"></script>
+  </head>
+  <body>
+    <header>
+      <h1> Pomodoro Clock</h1>
+      <h5>Change times in minutes, work and pause. Click counter to start, click again to pause and change. </h5>
+    </header>
+    <div class="box">
+    <div class="arrow2">
+      <i class="fa fa-tint spin" aria-hidden="true"></i>
+      <i class="fa fa-circle-o-notch spin hide" aria-hidden="true"></i>
+    </div>
+    <div class="clock">
+      <div class="offset">
+        <div class="setter">
+          <div class="set">
+              <i class="fa fa-chevron-up fa-2x workup" aria-hidden="true"></i>
+              <h1 class="setwork">25</h1>
+              <i class="fa fa-chevron-down fa-2x workdown" aria-hidden="true"></i>
+          </div>
+          <div class="set">
+              <i class="fa fa-chevron-up fa-2x pauseup" aria-hidden="true"></i>
+              <h1 class="setpause">5</h1>
+              <i class="fa fa-chevron-down fa-2x pausedown" aria-hidden="true"></i>
+          </div>
+        </div>
+      </div>
+      <div class="display">
+        <h1 class="counter">25:00</h1>
+      </div>
+
+    </div>
+
+  </div>
+  <footer>
+    <h5>created by Leandro LFdO</h5>
+ <!-- Push Notification button  DIV-->
+    <div class="fab fab__push">
+          <div class="fab__ripple"></div>
+          <img class="fab__image" src="push-off.png" alt="Push Notification" />
+    </div>
+  </footer>
+  </body>
+
+</html>

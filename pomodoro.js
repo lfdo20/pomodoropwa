@@ -10,7 +10,7 @@ $('document').ready(function(){
 
 // service worker for pwa
 
-function registerServiceWorker() {
+
   // register sw script in supporting browsers
   if ('serviceWorker' in navigator) {
     navigator.serviceWorker.register('sw.js', { scope: '/' }).then(() => {
@@ -19,7 +19,7 @@ function registerServiceWorker() {
       console.log('Service Worker registration failed:', error);
     });
   }
-}
+
 
 // notification setup
   var nw = new Audio('served.mp3');

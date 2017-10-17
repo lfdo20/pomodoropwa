@@ -1,5 +1,5 @@
 // sw.js
-// https://lfdo20.github.io/pomodoroclock/
+// https://lfdo20.github.io/pomodoroclockpwa/
 
 var cacheName = 'pomoclock-pwa-cache-v1';
 var cacheFiles = [

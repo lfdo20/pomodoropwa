@@ -35,7 +35,7 @@ $('document').ready(function(){
 function showNotificationW() {
     navigator.serviceWorker.ready.then(function(registration) {
       registration.showNotification('Work!', {
-        body: 'Get Back to work Man!!!',
+        body: 'Get Back to work!!!',
         badge: 'badge.png',
         icon: 'android-chrome-192x192.png',
         tag: 'pomodoro',

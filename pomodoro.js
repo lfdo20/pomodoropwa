@@ -8,9 +8,7 @@ $('document').ready(function(){
   var oldpause=0;
   var timer =0;
 
-// service worker for pwa
-
-
+  // service worker for pwa
   // register sw script in supporting browsers
   if ('serviceWorker' in navigator) {
     navigator.serviceWorker.register('sw.js').then(() => {
@@ -20,12 +18,51 @@ $('document').ready(function(){
     });
   }
 
+  // Notification Request
+  Notification.requestPermission(function(result) {
+    if (result === 'granted') {/*
+      navigator.serviceWorker.ready.then(function(registration) {
+        registration.showNotification('Notification with ServiceWorker', {
+          body: 'Get Back to work Man!!!',
+          icon: 'android-chrome-192x192.png',
+          vibrate: [200, 100, 200]
+        });
+      });*/
+    }
+  });
 
-// notification setup
+//Notification Setup Android
+function showNotificationW() {
+    navigator.serviceWorker.ready.then(function(registration) {
+      registration.showNotification('Work!', {
+        body: 'Get Back to work Man!!!',
+        badge: 'badge.png',
+        icon: 'android-chrome-192x192.png',
+        tag: 'pomodoro',
+        renotify: true,
+        vibrate: [200, 100, 200, 100]
+      });
+    });
+}
+
+function showNotificationP() {
+    navigator.serviceWorker.ready.then(function(registration) {
+      registration.showNotification('Relaxx..', {
+        body: "OK, you can relax a bit...",
+        badge: 'badge.png',
+        icon: "android-chrome-192x192.png",
+        tag: 'pomodoro',
+        renotify: true,
+        vibrate: [200, 100, 200, 100, 400]
+      });
+    });
+}
+
+// notification desktoptup
   var nw = new Audio('served.mp3');
   var np = new Audio('newmessage.mp3');
 
-  Notification.requestPermission();
+  //Notification.requestPermission();
 
   function notificationWork(theBody, theTitle) {
     var options = { body: theBody, vibrate: [200, 100, 200]}
@@ -143,7 +180,7 @@ function runwork(){
         $(".clock").css({'borderColor' : '#ad2a47'});
         looprb = 0;
         console.log('Fim trabalho'+looprb);
-        notificationPause('Ok, finally relax!', 'Pomodoro Clock');
+        showNotificationP();
         np.play();
         timer.stop();
         timer =0;
@@ -174,7 +211,7 @@ function runpause(){
         $(".clock").css({'borderColor' : 'green'});
         looprb = 1;
         console.log('Fim descanso'+looprb);
-        notificationWork('Get back to work man!', 'Pomodoro Clock');
+        showNotificationW();
         nw.play();
         timer.stop();
         timer=0;

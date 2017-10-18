@@ -7,7 +7,6 @@ var cacheFiles = [
   './index.html',
   './pomodoro.css',
   './pomodoro.js',
-  './notification.js',
   './easytimer.min.js',
   './newmessage.mp3',
   './served.mp3',
